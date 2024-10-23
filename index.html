@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+  <title>Speaker-Conditioned Phrase Break Prediction for Text-to-Speech with Phoneme-Level Pre-trained Language Model</title>
+  <style>
+    table {
+        border-collapse: collapse; /* 移除或减少边框间距 */
+        table-layout: fixed; /* 固定布局使列宽均匀 */
+        width: 100%; /* 可以调整表格的总宽度 */
+    }
+    th {
+        padding: 5px; /* 减少单元格内边距 */
+        text-align: center; /* 可选：居中对齐内容 */
+    }
+    td {
+        padding: 5px; /* 减少单元格内边距 */
+        text-align: left; /* 可选：居中对齐内容 */
+    }
+    audio {
+        width: 100%; /* 让音频播放器填满单元格 */
+    }
+  </style>
+  <style>
+    .two-column-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 50%; /* 新的两列表格总宽度为原来的一半 */
+    }
+    .two-column-table th {
+        padding: 5px;
+        text-align: center; /* 根据需要可以居中或靠左 */
+    }
+    .two-column-table td {
+        padding: 5px;
+        text-align: left; /* 根据需要可以居中或靠左 */
+    }
+    audio {
+        width: 100%;
+    }
+  </style>
+  <style>
+    .three-column-table {
+        border-collapse: collapse;
+        table-layout: fixed;
+        width: 75%;
+    }
+    .three-column-table th {
+        padding: 5px;
+        text-align: center;
+    }
+    .three-column-table td {
+        padding: 5px;
+        text-align: left;
+    }
+    audio {
+        width: 100%;
+    }
+  </style>
+  </head>
+
+<body>
+<font size='4', face="Arial"><h1><center>Speaker-Conditioned Phrase Break Prediction for Text-to-Speech with Phoneme-Level Pre-trained Language Model</center></h1></font>
+<font size='4', face="Arial"><center><b>Authors: </b> Dong Yang, Yuki Saito, Takaaki Saeki, Tomoki Koriyama, Wataru Nakata, Detai Xin, Hiroshi Saruwatari </center></font>
+<p></p> 
+<!--<font size='4', face="Arial"><center><a href="https://arxiv.org/abs/2402.00288">arXiv</a> <a href="https://github.com/ydqmkkx/Respiro-en">GitHub</a></center></font>
+<!-- <center><a href="https://arxiv.org/abs/">arxiv preprint</a></center> -->
+<!-- <center><a href="https://ydqmkkx.github.io/breath-detection/poster.html">poster</a></center> -->
+                            
+<br></br>
+<hr/>                     
+
+<font size='4', face="Arial"><h2>1. Samples from seen speakers</h2></font>
+<p></p>
+
+<table border="3" style="width:50%;">
+  <tr>
+    <th style="width:10%;">Name</th>
+    <th style="width:10%;">Method</th>
+    <th style="width:10%;">PLM</th>
+    <th style="width:10%;">Speaker embedding</th>
+  </tr>
+  <tr>
+    <td>GT</td><td>Ground-truth</td><td>--</td><td>--</td>
+  </tr>
+  <tr>
+    <td>Baseline</td><td>Baseline</td><td>BERT<sub>BASE</sub></td><td>--</td>
+  </tr>
+  <tr>
+    <td>Proposed I</td><td>Proposed</td><td>BERT<sub>BASE</sub></td><td>ResNet-TDNN, Frozen</td>
+  </tr>
+  <tr>
+    <td>Proposed II</td><td>Proposed</td><td>BERT<sub>BASE</sub></td><td>Xavier, Trainable</td>
+  </tr>
+  <tr>
+    <td>Proposed III</td><td>Proposed</td><td>MP BERT</td><td>Xavier, Trainable</td>
+  </tr>
+</table>
+<p></p>
+
+<table >
+  <tbody>
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">1. (speaker id: 278)</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Ground-truth:</b> ill / as he had fare ##d in his interview with the archdeacon ^ he was not the less under the necessity of carrying out his pledge to / eleanor
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/15/278_127215_000012_000001_0.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline, BERT:</b> ill / as he had fare ##d in his interview with the archdeacon ^ he was not the less under the necessity of carrying out his pledge to / eleanor
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/15/278_127215_000012_000001_0.wav"></audio></td>
+    </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>
 
