@@ -60,7 +60,7 @@
   </head>
 
 <body>
-<font size='4', face="Arial"><h1><center>Speaker-Conditioned Phrase Break Prediction for Text-to-Speech with Phoneme-Level Pre-trained Language Model</center></h1></font>
+<font size='4', face="Arial"><h1><center>Speaker-Conditioned Phrase Break Prediction for Text-to-Speech<br>with Phoneme-Level Pre-trained Language Model</center></h1></font>
 <font size='4', face="Arial"><center><b>Authors: </b> Dong Yang, Yuki Saito, Takaaki Saeki, Tomoki Koriyama, Wataru Nakata, Detai Xin, Hiroshi Saruwatari </center></font>
 <p></p> 
 <!--<font size='4', face="Arial"><center><a href="https://arxiv.org/abs/2402.00288">arXiv</a> <a href="https://github.com/ydqmkkx/Respiro-en">GitHub</a></center></font>
@@ -69,14 +69,15 @@
                             
 <br></br>
 <hr/>                     
+<p><font size='4', face="Arial">"/" is the RP mark.</font></p>
 
 <font size='4', face="Arial"><h2>1. Samples from seen speakers</h2></font>
 <p></p>
 
 <table border="3" style="width:50%;">
   <tr>
-    <th style="width:10%;">Name</th>
     <th style="width:10%;">Method</th>
+    <th style="width:10%;">Model</th>
     <th style="width:10%;">PLM</th>
     <th style="width:10%;">Speaker embedding</th>
   </tr>
@@ -101,19 +102,252 @@
 <table >
   <tbody>
     <tr>
-      <td colspan="4"><span><font size='4' face="Arial">1. (speaker id: 278)</font></span></td>
+      <td colspan="4"><span><font size='4' face="Arial">1. speaker ID: 329</font></span></td>
     </tr>
-    <td colspan="4"><span><font size='4' face="Arial"></font><b>Ground-truth:</b> ill / as he had fare ##d in his interview with the archdeacon ^ he was not the less under the necessity of carrying out his pledge to / eleanor
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT:</b> the walls however were so strong / that there seemed little prospect of success attending such an attempt , and a plan was therefore determined upon by which the enemy might be thrown off their guard
     </font></span></td>
     <tr>
-      <td><audio controls="controls"><source src="audio/15/278_127215_000012_000001_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/gt/1845_329.wav"></audio></td>
     </tr>
-    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline, BERT:</b> ill / as he had fare ##d in his interview with the archdeacon ^ he was not the less under the necessity of carrying out his pledge to / eleanor
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline:</b> the walls however were so strong that there seemed little prospect of success attending such an attempt , and a plan was therefore determined upon / by which the enemy might be thrown off their guard
     </font></span></td>
     <tr>
-      <td><audio controls="controls"><source src="audio/15/278_127215_000012_000001_0.wav"></audio></td>
+      <td><audio controls="controls"><source src="audio/baseline/1845_329.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed I & Proposed II & Proposed III:</b> the walls however were so strong / that there seemed little prospect of success attending such an attempt , and a plan was therefore determined upon / by which the enemy might be thrown off their guard
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/fixed/1845_329.wav"></audio></td>
     </tr>
 
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">2. speaker ID: 5319</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT & Proposed III:</b> of the two united states senators / and the seven members of the lower house of congress / not more than one colored man / occupied a seat in each house at the same time
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/gt/2378_5319.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline & Proposed I & Proposed II:</b> of the two united states senators / and the seven members of the lower house of congress / not more than one colored man / occupied a seat in each house / at the same time
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/baseline/2378_5319.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">3. speaker ID: 7120</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT:</b> while this letter clearly brought to light / the situation of things , its author however had scarcely begun to / conceive / of the numberless difficulties / which stood in the way of success / before the work could be accomplished
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/gt/6812_7120.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline:</b> while this letter clearly brought to light the situation of things , its author however had scarcely begun to conceive of the numberless difficulties / which stood in the way of success / before the work could be accomplished
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/baseline/6812_7120.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed I:</b> while this letter / clearly brought to light the situation of things , its author however had scarcely begun to conceive / of the numberless difficulties / which stood in the way of success / before the work could be accomplished
+      <tr>
+      <td><audio controls="controls"><source src="audio/fixed/6812_7120.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed II:</b> while this letter clearly brought to light the situation of things , its author however had scarcely begun to conceive / of the numberless difficulties / which stood in the way of success / before the work could be accomplished
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/trainable/6812_7120.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed III:</b> while this letter clearly brought to light / the situation of things , its author however had scarcely begun to conceive / of the numberless difficulties / which stood in the way of success / before the work could be accomplished
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/mpbert/6812_7120.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">4. speaker ID: 7515</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT:</b> so / punishment / is one of the essential necessities / for the safety of communities , but he who / is oppressed by a transgressor / has not / the right / to take vengeance
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/gt/3184_7515.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline:</b> so punishment is one of the essential necessities for the safety of communities , but he who is oppressed by a transgressor / has not the right to take vengeance
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/baseline/3184_7515.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed I:</b> so / punishment / is one of the essential necessities / for the safety of communities , but he who is oppressed / by a transgressor / has not / the right / to take vengeance
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/fixed/3184_7515.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed II:</b> so / punishment / is one of the essential necessities / for the safety of communities , but he who is oppressed by a transgressor / has not / the right / to take vengeance
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/trainable/3184_7515.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed III:</b> so / punishment / is one of the essential necessities for the safety of communities , but / he who is oppressed / by a transgressor / has not / the right / to take vengeance
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/mpbert/3184_7515.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">5. speaker ID: 7828</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT:</b> the lions they had bested / were splendid specimens themselves / and in their coats / tarzan noted a suggestion of the black / which was such a strongly marked characteristic / of numa of the pit
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/gt/3525_7828.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline:</b> the lions they had bested were splendid specimens themselves / and in their coats tarzan noted a suggestion of the black / which was such a strongly marked characteristic of numa of the pit
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/baseline/3525_7828.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed I & Proposed II & Proposed III:</b> the lions they had bested were splendid specimens themselves / and in their coats / tarzan noted a suggestion of the black / which was such a strongly marked characteristic of numa of the pit
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/fixed/3525_7828.wav"></audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<font size='4', face="Arial"><h2>2. Samples from unseen speakers</h2></font>
+<p></p>
+
+<table border="3" style="width:50%;">
+  <tr>
+    <th style="width:10%;">Method</th>
+    <th style="width:10%;">Model</th>
+    <th style="width:10%;">PLM</th>
+    <th style="width:20%;">Speaker embedding</th>
+    <th style="width:10%;">Samples</th>
+  </tr>
+  <tr>
+    <td>GT</td><td>Ground-truth</td><td>--</td><td>--</td><td>0</td>
+  </tr>
+  <tr>
+    <td>Baseline I</td><td>Baseline</td><td>BERT<sub>BASE</sub></td><td>--</td><td>0</td>
+  </tr>
+  <tr>
+    <td>Baseline II</td><td>Baseline</td><td>MP BERT</td><td>--</td><td>0</td>
+  </tr>
+  <tr>
+    <td>Proposed I</td><td>Proposed</td><td>BERT<sub>BASE</sub></td><td>Titanet<sub>LARGE</sub>, Frozen</td><td>30</td>
+  </tr>
+  <tr>
+    <td>Proposed II</td><td>Proposed</td><td>MP BERT</td><td>ECAPA-TDNN, Frozen</td><td>40</td>
+  </tr>
+  <tr>
+    <td>Proposed III</td><td>Proposed</td><td>BERT<sub>BASE</sub></td><td>ResNet-TDNN, Trainable</td><td>40</td>
+  </tr>
+  <tr>
+    <td>Proposed IV</td><td>Proposed</td><td>MP BERT</td><td>ResNet-TDNN, Trainable</td><td>30</td>
+  </tr>
+</table>
+<p></p>
+
+<table >
+  <tbody>
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">1. speaker ID: 116</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT & Baseline II & Proposed II & Proposed IV:</b> let us suppose that a student living in the year three thousand / desired to make sure that such a man as abraham lincoln really lived / and did the things attributed to him
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_gt/4293_116.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline I:</b> let us suppose that a student living in the year three thousand / desired to make sure that such a man as abraham lincoln / really lived / and did the things attributed to him
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_bert_nospk/4293_116.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed I & Proposed III:</b> let us suppose that a student living in the year three thousand / desired to make sure that such a man as abraham lincoln / really lived and did the things attributed to him
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_bert_frozen/4293_116.wav"></audio></td>
+    </tr>
+    
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">2. speaker ID: 1993</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT:</b> on the white pages i grouped sunday school cards and advertising cards / which i had brought from my old country . fuchs / got out the old candle moulds and made tallow candles
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_gt/1241_1993.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline I & Proposed I:</b> on the white pages / i grouped sunday school cards and advertising cards / which i had brought from my old country . fuchs got out the old candle moulds / and made tallow candles
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_bert_nospk/1241_1993.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline II & Proposed III & Proposed IV:</b> on the white pages i grouped sunday school cards and advertising cards / which i had brought from my old country . fuchs got out the old candle moulds / and made tallow candles
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_mpbert_trainable/1136_1462.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Proposed II:</b> on the white pages i grouped sunday school cards and advertising cards / which i had brought from my old country . fuchs got out the old candle moulds and made tallow candles
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_mpbert_frozen/1136_1462.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">3. speaker ID: 2277</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT & Proposed I-IV:</b> by the time he reached his own street he was keenly alive to the difficulties of his situation / and wished over and over that some solution would offer itself , that he could see his way out
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_gt/2159_2277.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline I:</b> by the time he reached his own street / he was keenly alive to the difficulties of his situation / and wished / over and over / that some solution would offer itself , that he could see his way out
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_bert_nospk/2159_2277.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline II:</b> by the time he reached his own street / he was keenly alive to the difficulties of his situation / and wished / over and over that some solution would offer itself , that he could see his way out
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_mpbert_nospk/2159_2277.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">4. speaker ID: 3000</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT:</b> it was furnished with the cast off / possessions of his bachelor days / and with odd things which he sheltered for friends of his / who followed itinerant and more or less artistic callings
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_gt/1136_1462.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline I & Proposed I & Proposed III:</b> it was furnished with the cast off possessions of his bachelor days / and with odd things which he sheltered for friends of his / who followed itinerant and more or less artistic callings
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_bert_nospk/1136_1462.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline II & Proposed II & Proposed IV:</b> it was furnished with the cast off possessions of his bachelor days / and with odd things which he sheltered for friends of his / who followed itinerant / and more or less artistic callings
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_mpbert_trainable/1136_1462.wav"></audio></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><span><font size='4' face="Arial">5. speaker ID: 6345</font></span></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>GT & Proposed I-IV:</b> the only excuse for this rash young man is to be found in the fact that while he was feeding his strange guest with cake and wine / she was feeding with her beauty , the first fire of his first love
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_gt/1873_6345.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline I:</b> the only excuse for this rash young man / is to be found in the fact / that while he was feeding his strange guest with cake and wine / she was feeding with her beauty , the first fire of his first love
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_bert_nospk/1873_6345.wav"></audio></td>
+    </tr>
+    <td colspan="4"><span><font size='4' face="Arial"></font><b>Baseline II:</b> the only excuse for this rash young man is to be found in the fact / that while he was feeding his strange guest with cake and wine / she was feeding with her beauty , the first fire of his first love
+    </font></span></td>
+    <tr>
+      <td><audio controls="controls"><source src="audio/unseen_mpbert_nospk/1873_6345.wav"></audio></td>
+    </tr>
   </tbody>
 </table>
 
